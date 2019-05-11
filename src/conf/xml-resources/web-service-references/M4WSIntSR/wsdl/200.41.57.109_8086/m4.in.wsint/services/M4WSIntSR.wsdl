@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://core.ws.m4.tedexis.com" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://core.ws.m4.tedexis.com">
+    <wsdl:documentation>
+		WS Internacional - Envío y Recepción
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://core.ws.m4.tedexis.com">
+            <xs:element name="sendSMS">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="passport" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="number" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="sendSMSResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="sendSMScc">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="passport" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="countryCode" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="number" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="sendSMSccResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="sendSMSappID">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="passport" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="number" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="appID" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="sendSMSappIDResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="sendSMSccappID">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="passport" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="countryCode" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="number" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="appID" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="sendSMSccappIDResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="sendSMSWithID">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="passport" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="number" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="sendSMSWithIDResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="sendSMSWithIDcc">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="passport" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="countryCode" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="number" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="sendSMSWithIDccResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="responseSMS">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="passport" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="number" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="messageID" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="responseSMSResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="responseSMScc">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="passport" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="countryCode" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="number" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="messageID" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="responseSMSccResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="sendSMSappIDRequest">
+        <wsdl:part name="parameters" element="ns:sendSMSappID"/>
+    </wsdl:message>
+    <wsdl:message name="sendSMSappIDResponse">
+        <wsdl:part name="parameters" element="ns:sendSMSappIDResponse"/>
+    </wsdl:message>
+    <wsdl:message name="responseSMSRequest">
+        <wsdl:part name="parameters" element="ns:responseSMS"/>
+    </wsdl:message>
+    <wsdl:message name="responseSMSResponse">
+        <wsdl:part name="parameters" element="ns:responseSMSResponse"/>
+    </wsdl:message>
+    <wsdl:message name="sendSMSccappIDRequest">
+        <wsdl:part name="parameters" element="ns:sendSMSccappID"/>
+    </wsdl:message>
+    <wsdl:message name="sendSMSccappIDResponse">
+        <wsdl:part name="parameters" element="ns:sendSMSccappIDResponse"/>
+    </wsdl:message>
+    <wsdl:message name="sendSMSWithIDRequest">
+        <wsdl:part name="parameters" element="ns:sendSMSWithID"/>
+    </wsdl:message>
+    <wsdl:message name="sendSMSWithIDResponse">
+        <wsdl:part name="parameters" element="ns:sendSMSWithIDResponse"/>
+    </wsdl:message>
+    <wsdl:message name="responseSMSccRequest">
+        <wsdl:part name="parameters" element="ns:responseSMScc"/>
+    </wsdl:message>
+    <wsdl:message name="responseSMSccResponse">
+        <wsdl:part name="parameters" element="ns:responseSMSccResponse"/>
+    </wsdl:message>
+    <wsdl:message name="sendSMSccRequest">
+        <wsdl:part name="parameters" element="ns:sendSMScc"/>
+    </wsdl:message>
+    <wsdl:message name="sendSMSccResponse">
+        <wsdl:part name="parameters" element="ns:sendSMSccResponse"/>
+    </wsdl:message>
+    <wsdl:message name="sendSMSWithIDccRequest">
+        <wsdl:part name="parameters" element="ns:sendSMSWithIDcc"/>
+    </wsdl:message>
+    <wsdl:message name="sendSMSWithIDccResponse">
+        <wsdl:part name="parameters" element="ns:sendSMSWithIDccResponse"/>
+    </wsdl:message>
+    <wsdl:message name="sendSMSRequest">
+        <wsdl:part name="parameters" element="ns:sendSMS"/>
+    </wsdl:message>
+    <wsdl:message name="sendSMSResponse">
+        <wsdl:part name="parameters" element="ns:sendSMSResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="M4WSIntSRPortType">
+        <wsdl:operation name="sendSMSappID">
+            <wsdl:input message="ns:sendSMSappIDRequest" wsaw:Action="urn:sendSMSappID"/>
+            <wsdl:output message="ns:sendSMSappIDResponse" wsaw:Action="urn:sendSMSappIDResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="responseSMS">
+            <wsdl:input message="ns:responseSMSRequest" wsaw:Action="urn:responseSMS"/>
+            <wsdl:output message="ns:responseSMSResponse" wsaw:Action="urn:responseSMSResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="sendSMSccappID">
+            <wsdl:input message="ns:sendSMSccappIDRequest" wsaw:Action="urn:sendSMSccappID"/>
+            <wsdl:output message="ns:sendSMSccappIDResponse" wsaw:Action="urn:sendSMSccappIDResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="sendSMSWithID">
+            <wsdl:input message="ns:sendSMSWithIDRequest" wsaw:Action="urn:sendSMSWithID"/>
+            <wsdl:output message="ns:sendSMSWithIDResponse" wsaw:Action="urn:sendSMSWithIDResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="responseSMScc">
+            <wsdl:input message="ns:responseSMSccRequest" wsaw:Action="urn:responseSMScc"/>
+            <wsdl:output message="ns:responseSMSccResponse" wsaw:Action="urn:responseSMSccResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="sendSMScc">
+            <wsdl:input message="ns:sendSMSccRequest" wsaw:Action="urn:sendSMScc"/>
+            <wsdl:output message="ns:sendSMSccResponse" wsaw:Action="urn:sendSMSccResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="sendSMSWithIDcc">
+            <wsdl:input message="ns:sendSMSWithIDccRequest" wsaw:Action="urn:sendSMSWithIDcc"/>
+            <wsdl:output message="ns:sendSMSWithIDccResponse" wsaw:Action="urn:sendSMSWithIDccResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="sendSMS">
+            <wsdl:input message="ns:sendSMSRequest" wsaw:Action="urn:sendSMS"/>
+            <wsdl:output message="ns:sendSMSResponse" wsaw:Action="urn:sendSMSResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="M4WSIntSRSoap11Binding" type="ns:M4WSIntSRPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="sendSMSappID">
+            <soap:operation soapAction="urn:sendSMSappID" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="responseSMS">
+            <soap:operation soapAction="urn:responseSMS" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendSMSccappID">
+            <soap:operation soapAction="urn:sendSMSccappID" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendSMSWithID">
+            <soap:operation soapAction="urn:sendSMSWithID" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendSMScc">
+            <soap:operation soapAction="urn:sendSMScc" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="responseSMScc">
+            <soap:operation soapAction="urn:responseSMScc" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendSMSWithIDcc">
+            <soap:operation soapAction="urn:sendSMSWithIDcc" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendSMS">
+            <soap:operation soapAction="urn:sendSMS" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="M4WSIntSRSoap12Binding" type="ns:M4WSIntSRPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="sendSMSappID">
+            <soap12:operation soapAction="urn:sendSMSappID" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="responseSMS">
+            <soap12:operation soapAction="urn:responseSMS" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendSMSccappID">
+            <soap12:operation soapAction="urn:sendSMSccappID" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendSMSWithID">
+            <soap12:operation soapAction="urn:sendSMSWithID" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendSMScc">
+            <soap12:operation soapAction="urn:sendSMScc" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="responseSMScc">
+            <soap12:operation soapAction="urn:responseSMScc" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendSMSWithIDcc">
+            <soap12:operation soapAction="urn:sendSMSWithIDcc" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendSMS">
+            <soap12:operation soapAction="urn:sendSMS" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="M4WSIntSRHttpBinding" type="ns:M4WSIntSRPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="sendSMSappID">
+            <http:operation location="M4WSIntSR/sendSMSappID"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="sendSMSappID"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="sendSMSappID"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="responseSMS">
+            <http:operation location="M4WSIntSR/responseSMS"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="responseSMS"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="responseSMS"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendSMSccappID">
+            <http:operation location="M4WSIntSR/sendSMSccappID"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="sendSMSccappID"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="sendSMSccappID"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendSMSWithID">
+            <http:operation location="M4WSIntSR/sendSMSWithID"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="sendSMSWithID"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="sendSMSWithID"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendSMScc">
+            <http:operation location="M4WSIntSR/sendSMScc"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="sendSMScc"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="sendSMScc"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="responseSMScc">
+            <http:operation location="M4WSIntSR/responseSMScc"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="responseSMScc"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="responseSMScc"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendSMSWithIDcc">
+            <http:operation location="M4WSIntSR/sendSMSWithIDcc"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="sendSMSWithIDcc"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="sendSMSWithIDcc"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendSMS">
+            <http:operation location="M4WSIntSR/sendSMS"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="sendSMS"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="sendSMS"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="M4WSIntSR">
+        <wsdl:port name="M4WSIntSRHttpSoap11Endpoint" binding="ns:M4WSIntSRSoap11Binding">
+            <soap:address location="http://200.41.57.109:8086/m4.in.wsint/services/M4WSIntSR.M4WSIntSRHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="M4WSIntSRHttpSoap12Endpoint" binding="ns:M4WSIntSRSoap12Binding">
+            <soap12:address location="http://200.41.57.109:8086/m4.in.wsint/services/M4WSIntSR.M4WSIntSRHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="M4WSIntSRHttpEndpoint" binding="ns:M4WSIntSRHttpBinding">
+            <http:address location="http://200.41.57.109:8086/m4.in.wsint/services/M4WSIntSR.M4WSIntSRHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

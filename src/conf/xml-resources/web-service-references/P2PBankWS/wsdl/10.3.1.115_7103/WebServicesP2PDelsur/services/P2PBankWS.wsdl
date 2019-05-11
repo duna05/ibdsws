@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://ws.rs.com" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax21="http://respuesta.ws.delsur.com/xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://ws.rs.com">
+    <wsdl:documentation>
+		Servicio Web Plataforma P2P Version 1.0, Propiedad de Roas Systems CA.
+		Licencia de Uso Perpetua Para Delsur Banco Universal.
+		MAS INFORMACION EN www.roassystems.com.ve roassystems@gmail.com
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ax22="http://respuesta.ws.delsur.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ws.rs.com">
+            <xs:import namespace="http://respuesta.ws.delsur.com/xsd"/>
+            <xs:element name="sumar">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="clave" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="codCanal" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="valorA" type="xs:int"/>
+                        <xs:element minOccurs="0" name="valorB" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="sumarResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="realizarPagoP2PTercerosDelsur">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="clave" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="codCanal" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="nroEmisor" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="nroBeneficiario" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="identificacionBeneficiario" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="monto" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="conceptoPago" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="identificacionPagador" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="realizarPagoP2PTercerosDelsurResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax22:RespuestaDTO"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="realizarPagoP2PTercerosOtrosBancos">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="clave" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="codCanal" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="nroEmisor" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="nroBeneficiario" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="identificacionBeneficiario" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="monto" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="conceptoPago" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="abaBancoReceptor" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="identificacionPagador" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="realizarPagoP2PTercerosOtrosBancosResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax22:RespuestaDTO"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://respuesta.ws.delsur.com/xsd">
+            <xs:complexType name="RespuestaDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="codigoSP" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="descripcionSP" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="referenciaTransaccion" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="realizarPagoP2PTercerosDelsurRequest">
+        <wsdl:part name="parameters" element="ns:realizarPagoP2PTercerosDelsur"/>
+    </wsdl:message>
+    <wsdl:message name="realizarPagoP2PTercerosDelsurResponse">
+        <wsdl:part name="parameters" element="ns:realizarPagoP2PTercerosDelsurResponse"/>
+    </wsdl:message>
+    <wsdl:message name="sumarRequest">
+        <wsdl:part name="parameters" element="ns:sumar"/>
+    </wsdl:message>
+    <wsdl:message name="sumarResponse">
+        <wsdl:part name="parameters" element="ns:sumarResponse"/>
+    </wsdl:message>
+    <wsdl:message name="realizarPagoP2PTercerosOtrosBancosRequest">
+        <wsdl:part name="parameters" element="ns:realizarPagoP2PTercerosOtrosBancos"/>
+    </wsdl:message>
+    <wsdl:message name="realizarPagoP2PTercerosOtrosBancosResponse">
+        <wsdl:part name="parameters" element="ns:realizarPagoP2PTercerosOtrosBancosResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="P2PBankWSPortType">
+        <wsdl:operation name="realizarPagoP2PTercerosDelsur">
+            <wsdl:input message="ns:realizarPagoP2PTercerosDelsurRequest" wsaw:Action="urn:realizarPagoP2PTercerosDelsur"/>
+            <wsdl:output message="ns:realizarPagoP2PTercerosDelsurResponse" wsaw:Action="urn:realizarPagoP2PTercerosDelsurResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="sumar">
+            <wsdl:input message="ns:sumarRequest" wsaw:Action="urn:sumar"/>
+            <wsdl:output message="ns:sumarResponse" wsaw:Action="urn:sumarResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="realizarPagoP2PTercerosOtrosBancos">
+            <wsdl:input message="ns:realizarPagoP2PTercerosOtrosBancosRequest" wsaw:Action="urn:realizarPagoP2PTercerosOtrosBancos"/>
+            <wsdl:output message="ns:realizarPagoP2PTercerosOtrosBancosResponse" wsaw:Action="urn:realizarPagoP2PTercerosOtrosBancosResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="P2PBankWSSoap11Binding" type="ns:P2PBankWSPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="realizarPagoP2PTercerosDelsur">
+            <soap:operation soapAction="urn:realizarPagoP2PTercerosDelsur" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sumar">
+            <soap:operation soapAction="urn:sumar" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="realizarPagoP2PTercerosOtrosBancos">
+            <soap:operation soapAction="urn:realizarPagoP2PTercerosOtrosBancos" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="P2PBankWSSoap12Binding" type="ns:P2PBankWSPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="realizarPagoP2PTercerosDelsur">
+            <soap12:operation soapAction="urn:realizarPagoP2PTercerosDelsur" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sumar">
+            <soap12:operation soapAction="urn:sumar" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="realizarPagoP2PTercerosOtrosBancos">
+            <soap12:operation soapAction="urn:realizarPagoP2PTercerosOtrosBancos" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="P2PBankWSHttpBinding" type="ns:P2PBankWSPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="realizarPagoP2PTercerosDelsur">
+            <http:operation location="realizarPagoP2PTercerosDelsur"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sumar">
+            <http:operation location="sumar"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="realizarPagoP2PTercerosOtrosBancos">
+            <http:operation location="realizarPagoP2PTercerosOtrosBancos"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="P2PBankWS">
+        <wsdl:port name="P2PBankWSHttpSoap11Endpoint" binding="ns:P2PBankWSSoap11Binding">
+            <soap:address location="http://10.3.1.115:7103/WebServicesP2PDelsur/services/P2PBankWS.P2PBankWSHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="P2PBankWSHttpSoap12Endpoint" binding="ns:P2PBankWSSoap12Binding">
+            <soap12:address location="http://10.3.1.115:7103/WebServicesP2PDelsur/services/P2PBankWS.P2PBankWSHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="P2PBankWSHttpEndpoint" binding="ns:P2PBankWSHttpBinding">
+            <http:address location="http://10.3.1.115:7103/WebServicesP2PDelsur/services/P2PBankWS.P2PBankWSHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

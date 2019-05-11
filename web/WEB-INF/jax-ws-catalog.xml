@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://200.41.57.109:8086/m4.in.wsint/services/M4WSIntSR?wsdl" uri="wsdl/200.41.57.109_8086/m4.in.wsint/services/M4WSIntSR.wsdl"/>
+    <system systemId="http://107.23.30.9/sendMTDelsur/SendMT?wsdl" uri="wsdl/107.23.30.9/sendMTDelsur/SendMT.wsdl"/>
+    <system systemId="http://107.23.30.9:80/sendMTDelsur/SendMT?xsd=1" uri="wsdl/107.23.30.9_80/sendMTDelsur/SendMT.xsd_1.xsd"/>
+    <system systemId="http://10.3.1.115:7103/WebServicesP2PDelsur/services/P2PBankWS?wsdl" uri="wsdl/10.3.1.115_7103/WebServicesP2PDelsur/services/P2PBankWS.wsdl"/>
+    <system systemId="http://svoriorvar35:7103/P2PBankWS/P2PBankWS?wsdl" uri="wsdl/svoriorvar35_7103/P2PBankWS/P2PBankWS.wsdl"/>
+    <system systemId="http://svoriorvar35:7103/P2PBankWS/P2PBankWS?xsd=1" uri="wsdl/svoriorvar35_7103/P2PBankWS/P2PBankWS.xsd_1.xsd"/>
+    <system systemId="http://svoriorvar35:7103/P2CBankWS/P2CBankWS?wsdl" uri="wsdl/svoriorvar35_7103/P2CBankWS/P2CBankWS.wsdl"/>
+    <system systemId="http://svoriorvar35:7103/P2CBankWS/P2CBankWS?xsd=1" uri="wsdl/svoriorvar35_7103/P2CBankWS/P2CBankWS.xsd_1.xsd"/>
+</catalog>
